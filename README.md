@@ -1,7 +1,7 @@
 # Birch Park
 
 ### What is it?
-The park just down the street from Gossip's Cafe. 
+The park just down the street from [Gossip's Cafe](https://gossips.cafe). 
 
 ### What do you do there?
 Get some fresh air with your friends.
@@ -20,3 +20,4 @@ The park becomes moonlit at night.
   - Maybe a Canvas "open space". There is an old tennis court at my neighborhood park that has been emptied out. Now people do whatever they want in there. I've seen people rollerskating, dancing, doing yoga, playing street hockey, and playing bike polo in there. I love that it is totally an anything-goes space. Would love to create a space that can feel the same way.
   - Plant a Tree
   - "The Park Bench" 
+  - Graffiti at Night
