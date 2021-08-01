@@ -1,26 +1,30 @@
 const API = 'http://localhost:7890/api/v1/messages';
 
 async function send(message) {
-  const response = await fetch(API, {
+  return await fetch(API, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(message),
-  });
-  return await response.json();
+  }).then(res => res.json());
 }
 
 async function getMessages() {
-  const response = await fetch(API, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  return await response.json();
+  return await fetch(API).then(res => res.json());
 }
 
-(async () => console.log(await getMessages()))();
+// post button handler
+document.querySelector('.chat > form > button').addEventListener('click', e => {
+  e.preventDefault();
 
-send({ name: 'clem', message: 'hello?' }).then(res => console.log(res));
+  // grab text from the inputs
+  const cssQuery = '.chat > form > fieldset:first-child > ';
+  const name = document.querySelector(cssQuery + 'input:first-child').value;
+  const message = document.querySelector(cssQuery + '*:last-child').value;
+
+  send({ name, message }).then(res => console.log(res));
+});
+
+// console log messages
+getMessages().then(res => console.log(res));
