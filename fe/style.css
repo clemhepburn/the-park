@@ -21,6 +21,8 @@ header {
 
 .weather {
   font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .birch-header, .weather, .chat {
