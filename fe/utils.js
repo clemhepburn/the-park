@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+/* ===BACKEND API=== */
 const URL = 'https://birch-park.herokuapp.com';
 const API = URL + '/api/v1/messages';
 
@@ -15,3 +17,6 @@ export async function sendMessage(message) {
 export async function getMessages() {
   return await fetch(API).then(res => res.json());
 }
+
+/* ===COLOR STUFF=== */
+
