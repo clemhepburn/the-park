@@ -34,6 +34,8 @@ header {
     height: 50vh;
     border-bottom: 1px solid floralwhite;
     margin-bottom: 1rem;
+    overflow-y: scroll;
+    padding-bottom: 15px;
 }
 
 .chat-header {
