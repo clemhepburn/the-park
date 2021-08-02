@@ -24,7 +24,7 @@ const messages = document.querySelector('.chat > .messages');
 getMessages().then(res => {
   for (let i = 0; i < res.length; i++) {
     const message = document.createElement('p');
-    message.innerHTML = `<strong>${res[i].name}</strong>: ${res[i].message}`;
+    message.innerHTML = `<span>${res[i].name}</span> — ${res[i].message}`;
     messages.insertBefore(message, messages.firstChild); 
   }
 });
@@ -40,10 +40,10 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
 
   send({ name, message }).then(res => console.log(res));
 
-  // add the message to the chat. i don't know if this is actually getting it from the db or if it's just getting the form text...
-  const newMessage = document.createElement('p');
-  newMessage.innerHTML = `<strong>${name}</strong>: ${message}`;
-  messages.insertBefore(newMessage, messages.firstChild);
+  // // add the message to the chat. i don't know if this is actually getting it from the db or if it's just getting the form text...
+  // const newMessage = document.createElement('p');
+  // newMessage.innerHTML = `<span>${name}</span> — ${message}`;
+  // messages.insertBefore(newMessage, messages.firstChild);
 
   // add it to the chat without reloading the page
   document.location.reload();
