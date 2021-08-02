@@ -1,26 +1,11 @@
 /* eslint-disable no-undef */
-const url = 'https://birch-park.herokuapp.com';
-const API = '/api/v1/messages';
+import { getMessages, sendMessage } from './utils_api.js';
 
-async function send(message) {
-  return await fetch(API, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(message),
-  }).then(res => res.json());
-}
+/*
+=== dynamic dom behavior and functions ===
+*/
 
-async function getMessages() {
-  return await fetch(API).then(res => res.json());
-}
-
-
-// dynamic dom behavior and functions
-
-
-//on load, display the existing messages in the messages div
+// display the existing messages in the messages div
 async function displayMessages() {
   const messages = document.querySelector('.chat > .messages');
 
@@ -60,14 +45,15 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   const inpMessage = document.querySelector(cssQuery + '*:last-child');
 
   // upload the message to the database and then console log it
-  send({ name: inpName.value, message: inpMessage.value }).then(res => console.log(res));
+  sendMessage({ name: inpName.value, message: inpMessage.value }).then(res => console.log(res));
 
-  // // add the message to the chat. i don't know if this is actually getting it from the db or if it's just getting the form text...
+  // // add the message to the chat
+  // const messages = document.querySelector('.chat > .messages');
   // const newMessage = document.createElement('p');
-  // newMessage.innerHTML = `<span>${name}</span> — ${message}`;
+  // newMessage.innerHTML = `<span>${inpName.value}</span> — ${inpMessage.value}`;
   // messages.insertBefore(newMessage, messages.firstChild);
 
-  // add it to the chat without reloading the page
+  // display messages without refreshing
   displayMessages();
 
   // clear the message input
