@@ -58,6 +58,7 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
 
   // clear the message input
   inpMessage.value = '';
+  inpName.value = '';
 });
 
 // display the messages
