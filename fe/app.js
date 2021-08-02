@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { getMessages, sendMessage } from './utils.js';
+import { getMessages, makeGradient, sendMessage } from './utils.js';
 
 /*
 === dynamic dom behavior and functions ===
@@ -18,6 +18,7 @@ async function displayMessages() {
       const message = document.createElement('p');
       const avatar = document.createElement('div');
       avatar.classList.add('avatar');
+      avatar.style.background = makeGradient(res[i].name);
       message.innerHTML = `<span>${res[i].name}</span> — ${res[i].message}`;
       message.insertAdjacentElement('afterbegin', avatar);
       messages.insertBefore(message, messages.firstChild); 
