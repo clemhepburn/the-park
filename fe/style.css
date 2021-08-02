@@ -47,6 +47,11 @@ header {
   padding-bottom: 15px;
 }
 
+.messages::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 .chat-header {
   width: 100%;
   border-bottom: 1px solid floralwhite;
