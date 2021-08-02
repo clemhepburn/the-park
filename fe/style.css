@@ -9,11 +9,17 @@ body {
 
 header {
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .birch-header {
   font-family: 'Times New Roman', serif;
   font-size: 1.2rem;
+}
+
+.weather {
+  font-size: 0.8rem;
 }
 
 .container {
