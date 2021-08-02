@@ -40,9 +40,9 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   e.preventDefault();
 
   // grab the inputs
-  const cssQuery = '.chat > form > fieldset:first-child > ';
+  const cssQuery = '.chat fieldset:first-child >';
   const inpName = document.querySelector(`${cssQuery} input:first-child`);
-  const inpMessage = document.querySelector(cssQuery + '*:last-child');
+  const inpMessage = document.querySelector(`${cssQuery} *:last-child`);
 
   // upload the message to the database and then console log it
   sendMessage({ name: inpName.value, message: inpMessage.value }).then(res => console.log(res));
