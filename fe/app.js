@@ -42,11 +42,9 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   const newMessage = document.createElement('p');
   newMessage.innerHTML = `<strong>${name}</strong>: ${message}`;
   messages.insertBefore(newMessage, messages.firstChild);
+  
   // add it to the chat without reloading the page
   document.location.reload('.messages');
-  
-
-
 
   // clear the inputs
   document.querySelector(cssQuery + 'input:first-child' + '*:last-child').value = '';
