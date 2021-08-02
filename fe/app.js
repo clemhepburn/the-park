@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const API = 'http://localhost:7890/api/v1/messages';
+const API = 'https://birch-park.herokuapp.com/api/v1/messages';
 
 async function send(message) {
   return await fetch(API, {
