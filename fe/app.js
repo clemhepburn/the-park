@@ -46,7 +46,7 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   messages.insertBefore(newMessage, messages.firstChild);
 
   // add it to the chat without reloading the page
-  document.location.reload('.messages');
+  document.location.reload();
 
   // clear the inputs
   document.querySelector(cssQuery + 'input:first-child' + '*:last-child').value = '';
