@@ -17,6 +17,8 @@ async function getMessages() {
 
 
 // dynamic dom behavior and functions
+
+
 //on load, display the existing messages in the messages div
 const messages = document.querySelector('.chat > .messages');
 getMessages().then(res => {
@@ -42,7 +44,7 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   const newMessage = document.createElement('p');
   newMessage.innerHTML = `<strong>${name}</strong>: ${message}`;
   messages.insertBefore(newMessage, messages.firstChild);
-  
+
   // add it to the chat without reloading the page
   document.location.reload('.messages');
 
