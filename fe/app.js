@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { getMessages, sendMessage } from './utils_api.js';
+import { getMessages, sendMessage } from './utils.js';
 
 /*
 === dynamic dom behavior and functions ===
@@ -16,7 +16,10 @@ async function displayMessages() {
   getMessages().then(res => {
     for (let i = 0; i < res.length; i++) {
       const message = document.createElement('p');
+      const avatar = document.createElement('div');
+      avatar.classList.add('avatar');
       message.innerHTML = `<span>${res[i].name}</span> — ${res[i].message}`;
+      message.insertAdjacentElement('afterbegin', avatar);
       messages.insertBefore(message, messages.firstChild); 
     }
   });
