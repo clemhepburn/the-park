@@ -45,7 +45,9 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   const inpMessage = document.querySelector(`${cssQuery} *:last-child`);
 
   // upload the message to the database and then console log it
-  sendMessage({ name: inpName.value, message: inpMessage.value }).then(res => console.log(res));
+  sendMessage({ name: inpName.value, message: inpMessage.value })
+    .then(res => console.log(res))
+    .then(displayMessages());
 
   // // add the message to the chat
   // const messages = document.querySelector('.chat > .messages');
@@ -54,7 +56,7 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   // messages.insertBefore(newMessage, messages.firstChild);
 
   // display messages without refreshing
-  displayMessages();
+  // displayMessages();
 
   // clear the message input
   inpMessage.value = '';
