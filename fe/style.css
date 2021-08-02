@@ -2,7 +2,7 @@ body {
   background-color: rgb(61, 159, 82);
   color: floralwhite;
   font-family: 'Helvetica', sans-serif;
-  height: 100vh;
+  height: 95vh;
   box-sizing: border-box;
   margin: 0;
 }
@@ -16,10 +16,16 @@ header {
 .birch-header {
   font-family: 'Times New Roman', serif;
   font-size: 1.2rem;
+
 }
 
 .weather {
   font-size: 0.8rem;
+}
+
+.birch-header, .weather, .chat {
+  z-index: 111111;
+  background-color: rgb(61, 159, 82);
 }
 
 .container {
