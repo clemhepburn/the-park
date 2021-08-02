@@ -64,6 +64,21 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   // clear the message input
   inpMessage.value = '';
   inpName.value = '';
+
+
+  // plant a tree
+  const fullWidth = window.innerWidth;
+  const fullHeight = window.innerHeight;
+
+  const text = '🌳';
+
+  const elem = document.createElement('div');
+  elem.textContent = text;
+  elem.style.position = 'absolute';
+  elem.style.zIndex = '-1';
+  elem.style.left = Math.round(Math.random() * fullWidth) + 'px';
+  elem.style.top = Math.round(Math.random() * fullHeight) + 'px';
+  document.body.appendChild(elem);
 });
 
 // display the messages
