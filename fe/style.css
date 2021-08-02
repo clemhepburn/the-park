@@ -28,6 +28,7 @@ header {
 .chat {
   width: 60%;
   padding: 1rem;
+  font-size: 0.9rem;
 }
 
 .messages {
