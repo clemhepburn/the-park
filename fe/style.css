@@ -15,7 +15,6 @@ header {
 .birch-header {
   font-family: 'Times New Roman', serif;
   font-size: 1.2rem;
-
 }
 
 .weather {
@@ -88,11 +87,23 @@ header {
 }
 
 .messages > p {
-  display: flex;
+  justify-content: start;
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  grid-gap: 0.5rem;
+  width: fit-content;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
-.messages > p > * {
+.messages > p > *:last-child {
   margin-right: 5px;
+  display: inline;
+  overflow-wrap: break-word;
+
+  width: auto;
 }
 
 .chat-header {
@@ -126,6 +137,10 @@ input, button {
   border-radius: 5px;
   outline: none;
   /* caret-color: floralwhite; */
+}
+
+fieldset > input {
+  resize: both;
 }
 
 button {
