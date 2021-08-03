@@ -19,7 +19,7 @@ async function loadMessages() {
 const renderMessages = (messages, container) => {
   for (let i = 0; i < messages.length; i++) {
     const message = document.createElement('p');
-    const avatar = document.createElement('span');
+    const avatar = document.createElement('div');
     avatar.classList.add('avatar');
     avatar.style.background = makeGradient(messages[i].name);
     message.innerHTML = `<span>${messages[i].name}</span> — ${messages[i].message}`;
