@@ -131,4 +131,5 @@ button {
   width: 1rem;
   height: 1rem;
   background-color: forestgreen;
+  border-radius: 10%;
 }
