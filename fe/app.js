@@ -18,13 +18,24 @@ async function loadMessages() {
 
 const renderMessages = (messages, container) => {
   for (let i = 0; i < messages.length; i++) {
-    const message = document.createElement('p');
+    // make the parent element
+    const parent = document.createElement('p');
+
+    // make the avatar
     const avatar = document.createElement('div');
     avatar.classList.add('avatar');
     avatar.style.background = makeGradient(messages[i].name);
-    message.innerHTML = `<span>${messages[i].name}</span> — ${messages[i].message}`;
-    message.insertAdjacentElement('afterbegin', avatar);
-    container.insertBefore(message, container.firstChild); 
+
+    // make the message 
+    const message = document.createElement('span');
+    message.textContent = `${messages[i].name} — ${messages[i].message}`;
+
+    // show the message
+    parent.insertAdjacentElement('afterbegin', avatar);
+    parent.insertAdjacentElement('beforeend', message);
+    container.insertBefore(parent, container.firstChild); 
+
+    // plant a tree
     plantTree(messages[i].createdAt);
   }
 };
