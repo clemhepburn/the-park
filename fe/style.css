@@ -110,3 +110,8 @@ button {
   height: 1rem;
   background-color: forestgreen;
 }
+
+main {
+  background-color: none!important;
+  display: normal!important;
+}
