@@ -12,11 +12,19 @@ header {
   justify-content: space-between;
 }
 
+main {
+  background: none;
+  display: initial!important;
+}
+
 .birch-header {
   font-family: 'Times New Roman', serif;
   font-size: 1.2rem;
 }
 
+/* =====================
+=== weather and news ===
+===================== */
 .weather {
   font-size: 0.8rem;
   display: flex;
@@ -47,22 +55,25 @@ header {
   padding-top: 1rem;
 }
 
+/* impotant bits */
 .birch-header, .weather, .chat {
   z-index: 111;
   background-color: rgb(61, 159, 82);
 }
 
-.tree {
-  position: absolute;
-  z-index: 222;
-}
-
+/* =============
+=== the chat ===
+============= */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* padding-top: 10vh; */
   width: 100%;
+}
+
+.fresh-air {
+  font-style: italic;
 }
 
 .chat {
@@ -93,7 +104,7 @@ header {
   background: transparent;
 }
 
-/* the messages */
+/* the individual messages */
 .messages > p {
   justify-content: start;
   display: grid;
@@ -120,10 +131,7 @@ header {
   width: auto;
 }
 
-.fresh-air {
-  font-style: italic;
-}
-
+/* form to upload a message */
 form {
   width: 100%;
   display: flex;
@@ -155,7 +163,10 @@ button {
   cursor: pointer;
 }
 
-main {
-  background: none;
-  display: initial!important;
+/* =========
+=== tree ===
+========= */
+.tree {
+  position: absolute;
+  z-index: 222;
 }
