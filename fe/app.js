@@ -6,30 +6,32 @@ import { getMessages, makeGradient, sendMessage } from './utils.js';
 */
 
 // display the existing messages in the messages div
-async function displayMessages() {
+async function loadMessages() {
   const messages = document.querySelector('.chat > .messages');
 
   // refresh the messages
   messages.innerHTML = '';
 
   // get the messages from the server and then display them
-  getMessages().then(res => {
-    for (let i = 0; i < res.length; i++) {
-      const message = document.createElement('p');
-      const avatar = document.createElement('div');
-      avatar.classList.add('avatar');
-      avatar.style.background = makeGradient(res[i].name);
-      message.innerHTML = `<span>${res[i].name}</span> — ${res[i].message}`;
-      message.insertAdjacentElement('afterbegin', avatar);
-      messages.insertBefore(message, messages.firstChild); 
-    }
-  });
+  getMessages().then(res => renderMessages(res, messages));
 }
+
+const renderMessages = (messages, container) => {
+  for (let i = 0; i < messages.length; i++) {
+    const message = document.createElement('p');
+    const avatar = document.createElement('div');
+    avatar.classList.add('avatar');
+    avatar.style.background = makeGradient(messages[i].name);
+    message.innerHTML = `<span>${messages[i].name}</span> — ${messages[i].message}`;
+    message.insertAdjacentElement('afterbegin', avatar);
+    container.insertBefore(message, container.firstChild); 
+  }
+};
 
 // we should use setInterval to keep the messages up to date
 // we can check every like 1 second for new messages
 // if the number of p's in the .chat element is the same as the amount of messages returned,
-// then do nothing, else, refresh the messages (call displayMessages)
+// then do nothing, else, refresh the messages (call loadMessages)
 // holy shit github copilot is like literally writing this message for me it's creepy af
 // wtf copilot y u do this 
 // omg it wrote that line for me
@@ -48,10 +50,15 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   const inpName = document.querySelector(`${cssQuery} input:first-child`);
   const inpMessage = document.querySelector(`${cssQuery} *:last-child`);
 
+  // grab the name and message
+  const name = inpName.value;
+  const message = inpMessage.value;
+
   // upload the message to the database and then console log it
-  sendMessage({ name: inpName.value, message: inpMessage.value })
-    .then(res => console.log(res))
-    .then(displayMessages());
+  getMessages()
+    .then(arr => sendMessage({ name, message }).then(res => [...arr, res]))
+    .then(res => renderMessages(res, document.querySelector('.chat > .messages')))
+  ;
 
   // // add the message to the chat
   // const messages = document.querySelector('.chat > .messages');
@@ -60,7 +67,7 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   // messages.insertBefore(newMessage, messages.firstChild);
 
   // display messages without refreshing
-  // displayMessages();
+  // loadMessages();
 
   // clear the message input
   inpMessage.value = '';
@@ -83,4 +90,4 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
 });
 
 // display the messages
-displayMessages();
+loadMessages();
