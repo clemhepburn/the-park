@@ -45,7 +45,7 @@ const makeColor = (hash, prime = 211) => {
 // takes in text and returns a hash
 const text2Hash = text => parseInt(text 
   .split('')
-  .reduce((acc, char) => (acc * char.charCodeAt(0)) % Number.MAX_SAFE_INTEGER, 1)
+  .reduce((acc, char, i) => 1 + (acc * (char.charCodeAt(0) ** (i + 1))) % Number.MAX_SAFE_INTEGER, 1)
 ) % COLORS;
 
 // returns a gradient (string) for a given text
