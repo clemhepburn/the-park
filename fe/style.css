@@ -61,6 +61,11 @@ main {
   background-color: rgb(61, 159, 82);
 }
 
+.tree {
+  position: absolute;
+  z-index: 222;
+}
+
 /* =============
 === the chat ===
 ============= */
@@ -163,14 +168,9 @@ button {
   cursor: pointer;
 }
 
-/* =========
-=== tree ===
-========= */
-.tree {
-  position: absolute;
-  z-index: 222;
-}
-
+/* ===========
+=== mobile ===
+=========== */
 @media(max-width: 535px) {
 
   header {
