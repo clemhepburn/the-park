@@ -13,6 +13,7 @@ async function sendMessage(message) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify(message),
   }).then(res => res.json());
