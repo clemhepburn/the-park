@@ -59,10 +59,12 @@ const makeGradient = (text, loud = false) => {
   // make gradient args
   const args = [];
 
+  // add first argument (either location or degrees or both) based on gradient type
   if (gradientType === 'linear') args.push(`${hash % 360}deg`);
   else if (gradientType === 'conic') args.push(`from ${hash % 360 }deg at ${hash % 100}% ${25 + hash % 50}%`);
   else if (gradientType === 'radial') args.push(`at ${hash % 100}% ${25 + hash % 50}%`);
 
+  // add however many colors
   const numOfColors = [1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5, 6, 7][hash % 11];
   for (let i = 0; i < numOfColors; i++) args.push(makeColor(hash, PRIMES[Math.max(((i + 1) * 41) % PRIMES.length - 1, 7)]));
 
