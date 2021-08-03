@@ -4,7 +4,7 @@
 ===BACKEND API=== 
 ===============*/
 
-const URL = 'https://www.citypark.world';
+const URL = 'http://www.citypark.world';
 const API = URL + '/api/v1/messages';
 
 async function sendMessage(message) {
