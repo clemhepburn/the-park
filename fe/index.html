@@ -2,38 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birch Park</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Park</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./favicon.svg" />
+  <script type="module" src="app.js" defer></script>
 </head>
 
 <body>
-    <header>
-      <span class="birch-header">Birch Park</span>  
-    </header>
+  <header>
+    <span class="birch-header">The Park</span>
+    <span class="weather">
+      <span>Today: 68° and Partly Cloudy ☀☁, Sunset at 8:37pm</span>
+      <span>&nbsp;</span>
+      <span>Park News: Young lovers spotted holding hands on the bench.<br>Also, we need trees planted.</span>
+  </span>  
+  </header>
+  
+  <main>
+    <div class="container">
+      
+      <div class="chat">
+        <div class="chat-header"><span class="fresh-air">Fresh Air...</span></div>
+        <div class="messages"><p></p></div>
+        <form>
+          <fieldset>
+            <input type="text" class="form-control" placeholder="name">
+            <input type="text" class="form-control" placeholder="What's up?">
+          </fieldset>
+          <button>Post</button>
+        </form>
+      </div>
     
-    <main>
-        <div class="container">
-            
-            <div class="chat">
-                <div class="chat-header"><span class="fresh-air">Fresh Air...</span></div>
-                <div class="messages"></div>
-                <form>
-                    <fieldset>
-                        <input type="text" class="form-control" placeholder="name">
-                        <input type="text" class="form-control" placeholder="What's up?">
-                    </fieldset>
-                    <button>Post</button>
-                </form>
-            </div>
-        
-        </div>
-    </main>
+    </div>
+  </main>
 
-    <footer></footer>
+  <footer></footer>
 </body>
 
 </html>

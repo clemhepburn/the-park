@@ -1,30 +1,86 @@
-const API = 'http://localhost:7890/api/v1/messages';
+/* eslint-disable no-undef */
+import { getMessages, makeGradient, sendMessage } from './utils.js';
 
-async function send(message) {
-  return await fetch(API, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(message),
-  }).then(res => res.json());
+/*
+=== dynamic dom behavior and functions ===
+*/
+
+// display the existing messages in the messages div
+async function displayMessages() {
+  const messages = document.querySelector('.chat > .messages');
+
+  // refresh the messages
+  messages.innerHTML = '';
+
+  // get the messages from the server and then display them
+  getMessages().then(res => {
+    for (let i = 0; i < res.length; i++) {
+      const message = document.createElement('p');
+      const avatar = document.createElement('div');
+      avatar.classList.add('avatar');
+      avatar.style.background = makeGradient(res[i].name);
+      message.innerHTML = `<span>${res[i].name}</span> — ${res[i].message}`;
+      message.insertAdjacentElement('afterbegin', avatar);
+      messages.insertBefore(message, messages.firstChild); 
+    }
+  });
 }
 
-async function getMessages() {
-  return await fetch(API).then(res => res.json());
-}
+// we should use setInterval to keep the messages up to date
+// we can check every like 1 second for new messages
+// if the number of p's in the .chat element is the same as the amount of messages returned,
+// then do nothing, else, refresh the messages (call displayMessages)
+// holy shit github copilot is like literally writing this message for me it's creepy af
+// wtf copilot y u do this 
+// omg it wrote that line for me
+// and even half of that one ^
+// and I'm like "oh my god"
+// and I'm like "oh my god"
+// and I'm like "oh my god"
+// lmao now it just keeps writing that ^
 
 // post button handler
 document.querySelector('.chat > form > button').addEventListener('click', e => {
   e.preventDefault();
 
-  // grab text from the inputs
-  const cssQuery = '.chat > form > fieldset:first-child > ';
-  const name = document.querySelector(cssQuery + 'input:first-child').value;
-  const message = document.querySelector(cssQuery + '*:last-child').value;
+  // grab the inputs
+  const cssQuery = '.chat fieldset:first-child >';
+  const inpName = document.querySelector(`${cssQuery} input:first-child`);
+  const inpMessage = document.querySelector(`${cssQuery} *:last-child`);
 
-  send({ name, message }).then(res => console.log(res));
+  // upload the message to the database and then console log it
+  sendMessage({ name: inpName.value, message: inpMessage.value })
+    .then(res => console.log(res))
+    .then(displayMessages());
+
+  // // add the message to the chat
+  // const messages = document.querySelector('.chat > .messages');
+  // const newMessage = document.createElement('p');
+  // newMessage.innerHTML = `<span>${inpName.value}</span> — ${inpMessage.value}`;
+  // messages.insertBefore(newMessage, messages.firstChild);
+
+  // display messages without refreshing
+  // displayMessages();
+
+  // clear the message input
+  inpMessage.value = '';
+  inpName.value = '';
+
+
+  // plant a tree
+  const fullWidth = window.innerWidth;
+  const fullHeight = window.innerHeight;
+
+  const text = '🌳';
+
+  const elem = document.createElement('div');
+  elem.textContent = text;
+  elem.style.position = 'absolute';
+  elem.style.zIndex = '-1';
+  elem.style.left = Math.round(Math.random() * fullWidth) + 'px';
+  elem.style.top = Math.round(Math.random() * fullHeight) + 'px';
+  document.body.appendChild(elem);
 });
 
-// console log messages
-getMessages().then(res => console.log(res));
+// display the messages
+displayMessages();

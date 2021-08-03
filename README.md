@@ -1,4 +1,4 @@
-# Birch Park
+# The Park
 
 ### What is it?
 The park just down the street from [Gossip's Cafe](https://gossips.cafe). 
@@ -10,7 +10,7 @@ Get some fresh air with your friends.
 This is where people can hang out and talk with each other.
 
 ## No Auth
-Similarly to Gossip's Cafe, Birch Park utilizes no auth. The park is open to all.
+Similarly to Gossip's Cafe, the park utilizes no auth. The park is open to all.
 
 ## Day/Night
 The park becomes moonlit at night.
