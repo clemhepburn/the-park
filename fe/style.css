@@ -170,3 +170,35 @@ button {
   position: absolute;
   z-index: 222;
 }
+
+@media(max-width: 535px) {
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat {
+    margin-top: 3rem;
+  }
+
+  .messages {
+    height: 30vh;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+}
