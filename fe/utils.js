@@ -8,6 +8,7 @@ const URL = 'https://birch-park.herokuapp.com';
 const API = URL + '/api/v1/messages';
 
 async function sendMessage(message) {
+  console.log(message);
   return await fetch(API, {
     method: 'POST',
     headers: {
