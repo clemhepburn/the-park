@@ -4,7 +4,7 @@
 ===BACKEND API=== 
 ===============*/
 
-const URL = 'https://birch-park.herokuapp.com';
+const URL = 'http://www.citypark.world';
 const API = URL + '/api/v1/messages';
 
 async function sendMessage(message) {
@@ -74,4 +74,4 @@ const makeGradient = (text, loud = false) => {
   return `${gradientType}-gradient(${args.join(', ')})`;
 };
 
-export { makeGradient };
+export { makeGradient, text2Hash };
