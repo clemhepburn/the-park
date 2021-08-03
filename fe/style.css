@@ -88,9 +88,9 @@ header {
   background: transparent;
 }
 
-.messages > p {
+/* .messages > p {
   display: flex;
-}
+} */
 
 .messages > p > * {
   margin-right: 5px;
