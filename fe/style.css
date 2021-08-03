@@ -112,6 +112,6 @@ button {
 }
 
 main {
-  background-color: none!important;
-  display: normal!important;
+  background: none;
+  display: initial;
 }
