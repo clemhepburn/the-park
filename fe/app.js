@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { getMessages, makeGradient, sendMessage } from './utils.js';
+import { getMessages, makeGradient, sendMessage, text2Hash } from './utils.js';
 
 /*
 === dynamic dom behavior and functions ===
@@ -25,7 +25,26 @@ const renderMessages = (messages, container) => {
     message.innerHTML = `<span>${messages[i].name}</span> — ${messages[i].message}`;
     message.insertAdjacentElement('afterbegin', avatar);
     container.insertBefore(message, container.firstChild); 
+    plantTree(messages[i].createdAt);
   }
+};
+
+const plantTree = message => {
+  const hash = text2Hash(message);
+
+  // grab width and heigh
+  const fullWidth = window.innerWidth;
+  const fullHeight = window.innerHeight;
+
+  // make the tree
+  const elem = document.createElement('div');
+  elem.textContent = '🌳';
+  elem.classList.add('tree');
+  elem.style.left = (hash % fullWidth) + 'px';
+  elem.style.top = (hash % fullHeight) + 'px';
+
+  // plant the tree
+  document.body.appendChild(elem);
 };
 
 // we should use setInterval to keep the messages up to date
@@ -72,21 +91,6 @@ document.querySelector('.chat > form > button').addEventListener('click', e => {
   // clear the message input
   inpMessage.value = '';
   inpName.value = '';
-
-
-  // plant a tree
-  const fullWidth = window.innerWidth;
-  const fullHeight = window.innerHeight;
-
-  const text = '🌳';
-
-  const elem = document.createElement('div');
-  elem.textContent = text;
-  elem.style.position = 'absolute';
-  elem.style.zIndex = '-1';
-  elem.style.left = Math.round(Math.random() * fullWidth) + 'px';
-  elem.style.top = Math.round(Math.random() * fullHeight) + 'px';
-  document.body.appendChild(elem);
 });
 
 // display the messages

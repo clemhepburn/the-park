@@ -49,8 +49,13 @@ header {
 }
 
 .birch-header, .weather, .chat {
-  z-index: 111111;
+  z-index: 111;
   background-color: rgb(61, 159, 82);
+}
+
+.tree {
+  position: absolute;
+  z-index: 222;
 }
 
 .container {
