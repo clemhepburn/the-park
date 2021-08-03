@@ -113,5 +113,5 @@ button {
 
 main {
   background: none;
-  display: initial;
+  display: initial!important;
 }
