@@ -133,3 +133,8 @@ button {
   background-color: forestgreen;
   border-radius: 10%;
 }
+
+main {
+  background: none;
+  display: initial!important;
+}
