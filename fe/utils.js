@@ -67,11 +67,11 @@ const makeGradient = (text, loud = false) => {
   else if (gradientType === 'radial') args.push(`at ${hash % 100}% ${25 + hash % 50}%`);
 
   // add however many colors
-  const numOfColors = [1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5, 6, 7][hash % 11];
+  const numOfColors = [2, 2, 2, 2, 3, 3, 3, 4, 4, 5, 6, 7][hash % 10];
   for (let i = 0; i < numOfColors; i++) args.push(makeColor(hash, PRIMES[Math.max(((i + 1) * 41) % PRIMES.length - 1, 7)]));
 
   // return gradient
-  if (loud) console.log(text, `${gradientType}-gradient(${args.join(', ')})`);
+  if (loud) console.log(text, hash, `${gradientType}-gradient(${args.join(', ')})`);
   return `${gradientType}-gradient(${args.join(', ')})`;
 };
 
