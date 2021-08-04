@@ -2,7 +2,7 @@
 import { getMessages, makeGradient, sendMessage, text2Hash } from './utils.js';
 
 /*
-=== dynamic dom behavior and functions ===
+dynamic dom behavior and functions 
 */
 
 // display the existing messages in the messages div
@@ -44,8 +44,8 @@ const plantTree = message => {
   const hash = text2Hash(message);
 
   // grab width and heigh
-  const fullWidth = window.innerWidth;
-  const fullHeight = window.innerHeight;
+  const fullWidth = window.innerWidth - 10;
+  const fullHeight = window.innerHeight - 10;
 
   // make the tree
   const elem = document.createElement('div');
