@@ -43,6 +43,7 @@ main {
   padding: 0.5rem;
   border: 2px solid floralwhite;
   margin-top: 30px;
+  resize: both; 
 }
 
 .news-header {

@@ -49,7 +49,7 @@ const plantTree = message => {
 
   // make the tree
   const elem = document.createElement('div');
-  elem.textContent = has % 400 ? '🌳' : '🍀';
+  elem.textContent = hash % 400 ? '🌳' : '🍀';
   elem.classList.add('tree');
   elem.style.left = (hash % fullWidth) + 'px';
   elem.style.top = (hash % fullHeight) + 'px';
