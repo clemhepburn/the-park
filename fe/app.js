@@ -9,14 +9,14 @@ dynamic dom behavior and functions
 async function loadMessages() {
   const messages = document.querySelector('.chat > .messages');
 
-  // refresh the messages
-  messages.innerHTML = '';
-
   // get the messages from the server and then display them
   getMessages().then(res => renderMessages(res, messages));
 }
 
 const renderMessages = (messages, container) => {
+  // refresh the messages
+  container.innerHTML = '';
+
   for (let i = 0; i < messages.length; i++) {
     // make the parent element
     const parent = document.createElement('p');
@@ -44,12 +44,12 @@ const plantTree = message => {
   const hash = text2Hash(message);
 
   // grab width and heigh
-  const fullWidth = window.innerWidth - 10;
-  const fullHeight = window.innerHeight - 10;
+  const fullWidth = window.innerWidth - 20;
+  const fullHeight = window.innerHeight - 20;
 
   // make the tree
   const elem = document.createElement('div');
-  elem.textContent = '🌳';
+  elem.textContent = has % 400 ? '🌳' : '🍀';
   elem.classList.add('tree');
   elem.style.left = (hash % fullWidth) + 'px';
   elem.style.top = (hash % fullHeight) + 'px';
