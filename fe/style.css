@@ -64,6 +64,12 @@ main {
   border: rgb(228, 228, 250) 2px dashed;
 }
 
+.weather, .birch-header {
+  z-index: 111;
+  background-color: rgb(242, 244, 250);
+  border-radius: 50%;
+}
+
 .tree {
   position: absolute;
   z-index: 222;
