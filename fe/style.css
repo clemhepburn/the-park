@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(61, 159, 82);
-  color: floralwhite;
+  background-color: rgb(242, 244, 250);
+  color: royalblue;
   font-family: 'Helvetica', sans-serif;
   box-sizing: border-box;
   margin: 0;
@@ -35,13 +35,13 @@ main {
 .news {
   display: flex;
   flex-direction: column;
-  background-color: rgb(96, 76, 32, 0.8);
+  background-color: transparent;
   border-radius: 10px;
   width: 60%;
   height: 40%;
   overflow: scroll;
   padding: 0.5rem;
-  border: 2px solid floralwhite;
+  border: 2px solid rgb(96, 76, 32, 0.8);
   margin-top: 30px;
   resize: both; 
 }
@@ -57,9 +57,11 @@ main {
 }
 
 /* impotant bits */
-.birch-header, .weather, .chat {
+.chat {
   z-index: 111;
-  background-color: rgb(61, 159, 82);
+  background-color: rgb(235, 239, 252);
+  border-radius: 50%;
+  border: rgb(228, 228, 250) 2px dashed;
 }
 
 .tree {
@@ -79,7 +81,11 @@ main {
 }
 
 .fresh-air {
-  font-style: italic;
+  font-style: normal;
+  font-family: 'Times New Roman', serif;
+  font-size: 2rem;
+  letter-spacing: -2.5px;
+  color: royalblue;
 }
 
 .chat {
@@ -90,13 +96,17 @@ main {
 
 .chat-header {
   width: 100%;
-  border-bottom: 1px solid floralwhite;
+  /* border-bottom: 1px solid rgb(27, 94, 73); */
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .messages {
   height: 50vh;
-  border-bottom: 1px solid floralwhite;
+  /* border-bottom: 1px solid rgb(27, 94, 73); */
   margin-bottom: 1rem;
   overflow-y: scroll;
   overflow-x: auto;
@@ -153,8 +163,8 @@ fieldset {
 }
 
 input, button {
-  border:rgb(181, 218, 122) 1px dashed;
-  background-color:rgb(181, 218, 122);
+  border:rgb(114, 102, 86) 1px solid;
+  background-color: rgb(242, 244, 250);
   color: rgb(114, 102, 86);
   border-radius: 5px;
   outline: none;
