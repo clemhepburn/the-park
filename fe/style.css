@@ -219,3 +219,18 @@ button {
     margin-bottom: 10px;
   }
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  padding-top: 4rem;
+  font-size: 0.8rem;
+  color: rgb(114, 102, 86);
+}
+
+footer a {
+  color: rgb(91, 81, 69);
+}
