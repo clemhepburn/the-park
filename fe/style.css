@@ -220,6 +220,11 @@ button {
   }
 }
 
+.gossip-cocoa {
+  width: 150px;
+  margin-top: 3rem;
+}
+
 footer {
   display: flex;
   flex-direction: column;
